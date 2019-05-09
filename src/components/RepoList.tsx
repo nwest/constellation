@@ -1,11 +1,12 @@
 import React from "react";
 import IRepo from "../models/repo";
+import { connect } from "react-redux";
 
-export interface IRepoList {
+interface IRepoList {
     repos: IRepo[]
 }
 
-const RepoList: React.FC<IRepoList> = (props) => {
+const RepoListComponent: React.FC<IRepoList> = (props) => {
     return (
         <div>
             { props.repos.map( repo => {
@@ -14,5 +15,11 @@ const RepoList: React.FC<IRepoList> = (props) => {
         </div>
     );
 };
+
+const mapStateToProps = (state: { repos: any; }) => {
+    return { repos: state.repos };
+}
+
+const RepoList = connect(mapStateToProps)(RepoListComponent);
 
 export default RepoList;

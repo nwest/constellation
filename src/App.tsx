@@ -8,7 +8,7 @@ const App: React.FC = () => {
       <div className="App">
           See your Starred Repos:
           <UsernameInput />
-          <RepoList repos={[]} />
+          <RepoList />
       </div>
   );
 };
