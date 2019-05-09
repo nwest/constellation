@@ -5,6 +5,6 @@ import App from './App';
 it('says Hello World!', () => {
   const div = document.createElement("div");
   ReactDOM.render(<App />, div);
-  expect(div.innerHTML).toMatch("Hello World!");
+  expect(div.innerHTML).toMatch("See your Starred Repos:");
   ReactDOM.unmountComponentAtNode(div);
 });
