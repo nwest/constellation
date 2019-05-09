@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 
 const reducer = (state: any = { following: [] }, action: Action) => {
     return state;
-}
+};
 
 const store = createStore(reducer);
 
