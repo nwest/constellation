@@ -9,9 +9,10 @@ interface IRepoList {
 const RepoList: React.FC<IRepoList> = ({ repos }) => {
     return (
         <div>
-            { repos.map( repo => {
-                return <h1 key={repo.id}>{ repo.full_name }</h1>
-            }) }
+            {repos.map( repo => {
+                    return <div key={repo.id}><a href={repo.html_url}>{ repo.full_name }</a><br/></div>
+                })
+            }
         </div>
     );
 };
