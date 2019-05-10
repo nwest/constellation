@@ -1,14 +1,11 @@
 import React from 'react';
-import IRepo from "../models/repo";
 
-const newRepos = (repos: IRepo[]) => {
-    return {
-        type: "NEWREPOS",
-        repos: repos
-    }
+interface IUsernameProps {
+    fetchUsername: (username: string) => void;
 };
 
-const UsernameInput: React.FC = () => {
+
+const UsernameInput: React.FC<IUsernameProps> = ({ fetchUsername }) => {
     let input: HTMLInputElement | null;
     return (
         <div>
@@ -18,11 +15,9 @@ const UsernameInput: React.FC = () => {
                     if (input === null || !input.value.trim()) {
                         return
                     }
-                    // console.log(`entered: ${input.value}`);
-
-
+                    const username = input.value.toString();
+                    fetchUsername(username);
                 }}>
-
                 <input ref={node => {
                     input = node;
                 }}
@@ -34,3 +29,4 @@ const UsernameInput: React.FC = () => {
 };
 
 export default UsernameInput;
+
