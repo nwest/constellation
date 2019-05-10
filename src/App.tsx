@@ -33,4 +33,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, any>): IAppProps =
     };
 };
 
-export default connect(() => {}, mapDispatchToProps)(App);
+export default connect((state) => {return state}, mapDispatchToProps)(App);
